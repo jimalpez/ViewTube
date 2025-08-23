@@ -3,7 +3,7 @@ import { google } from "googleapis";
 
 const youtube = google.youtube({
   version: "v3",
-  auth: process.env.YOUTUBE_API_KEY,
+  auth: process.env.YOUTUBE_API_KEY || process.env.NEXT_PUBLIC_YOUTUBE_API_KEY,
 });
 
 export async function GET(request: NextRequest, context: any) {
