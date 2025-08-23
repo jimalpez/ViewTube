@@ -6,10 +6,7 @@ const youtube = google.youtube({
   auth: process.env.YOUTUBE_API_KEY,
 });
 
-export async function GET(
-  request: NextRequest,
-  context: { params: { id: string } },
-) {
+export async function GET(request: NextRequest, context: any) {
   const videoId = context.params.id;
 
   try {

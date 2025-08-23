@@ -66,7 +66,7 @@ const channelVideos = [
   },
 ];
 
-export default function ChannelPage({ params }: { params: { id: string } }) {
+export default function ChannelPage({ params }: any) {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
