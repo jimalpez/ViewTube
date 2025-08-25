@@ -998,37 +998,39 @@ export default function WatchPage() {
               {/* Sidebar - Related Videos */}
               <div className="space-y-4">
                 <h2 className="text-lg font-semibold">Up next</h2>
-                {relatedVideos.map((video, i) => (
-                  <Link key={video.id} href={`/watch?v=${video.id}`}>
-                    <Card className="cursor-pointer hover:shadow-md transition-shadow">
-                      <CardContent className="p-0">
-                        <div className="flex gap-3">
-                          <div className="w-40 aspect-video bg-muted rounded-lg overflow-hidden flex-shrink-0 relative">
-                            <img
-                              src={video.thumbnail || "/placeholder.svg"}
-                              alt={video.title}
-                              className="w-full h-full object-cover"
-                            />
-                            <div className="absolute bottom-1 right-1 bg-black/80 text-white text-xs px-1 rounded">
-                              {video.duration}
+                <div className="space-y-5">
+                  {relatedVideos.map((video, i) => (
+                    <Link key={video.id} href={`/watch?v=${video.id}`} className="block">
+                      <Card className="cursor-pointer !p-0 border-none shadow-none">
+                        <CardContent className="p-0">
+                          <div className="flex gap-3">
+                            <div className="w-40 aspect-video bg-muted rounded-lg overflow-hidden flex-shrink-0 relative">
+                              <img
+                                src={video.thumbnail || "/placeholder.svg"}
+                                alt={video.title}
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute bottom-1 right-1 bg-black/80 text-white text-xs px-1 rounded">
+                                {video.duration}
+                              </div>
+                            </div>
+                            <div className="flex-1 p-3">
+                              <h3 className="font-medium text-sm line-clamp-2 mb-1">
+                                {video.title}
+                              </h3>
+                              <p className="text-xs text-muted-foreground mb-1">
+                                {video.channel}
+                              </p>
+                              <p className="text-xs text-muted-foreground">
+                                {video.views} views • {video.timeAgo}
+                              </p>
                             </div>
                           </div>
-                          <div className="flex-1 p-3">
-                            <h3 className="font-medium text-sm line-clamp-2 mb-1">
-                              {video.title}
-                            </h3>
-                            <p className="text-xs text-muted-foreground mb-1">
-                              {video.channel}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                              {video.views} views • {video.timeAgo}
-                            </p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

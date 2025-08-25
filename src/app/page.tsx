@@ -457,7 +457,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {trendingVideos.slice(0, 4).map((video) => (
                   <Link key={video.id} href={`/watch?v=${video.id}`}>
-                    <Card className="group cursor-pointer hover:shadow-lg transition-shadow">
+                    <Card className="group cursor-pointer hover:shadow-lg transition-shadow !pt-0 h-full">
                       <CardContent className="p-0">
                         <div className="aspect-video bg-muted rounded-t-lg relative overflow-hidden">
                           <img
@@ -517,7 +517,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {videos.map((video) => (
                 <Link key={video.id} href={`/watch?v=${video.id}`}>
-                  <Card className="group cursor-pointer hover:shadow-lg transition-shadow">
+                  <Card className="group cursor-pointer hover:shadow-lg transition-shadow !pt-0 h-full">
                     <CardContent className="p-0">
                       <div className="aspect-video bg-muted rounded-t-lg relative overflow-hidden">
                         <img
